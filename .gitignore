@@ -1,0 +1,6 @@
+# venv
+.venv
+activate.bat
+
+# security
+.env
