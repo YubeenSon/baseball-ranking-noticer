@@ -4,3 +4,6 @@ activate.bat
 
 # security
 .env
+
+# samle_data
+sample_data
