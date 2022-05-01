@@ -7,3 +7,6 @@ activate.bat
 
 # samle_data
 sample_data
+
+# pycache
+__pycache__
