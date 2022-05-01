@@ -1,6 +1,4 @@
-from ast import For
-from numbers import Integral
-from database.models import Base
+from database import Base
 from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
 
 
@@ -10,7 +8,7 @@ class HitterScore(Base):
     score_id = Column(String(50), primary_key=True)
     
     date = Column(Date(), nullable=False)
-    date_int = Column(Integer(10), nullable=False)
+    date_int = Column(Integer(), nullable=False)
 
     # 경기, 타석, 타수
     game_count = Column(Integer())

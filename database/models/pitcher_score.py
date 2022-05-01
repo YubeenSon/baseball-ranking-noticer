@@ -1,4 +1,4 @@
-from database.models import Base
+from database import Base
 from sqlalchemy import Column, Date, Float, Integer, String, ForeignKey
 
 
@@ -8,7 +8,7 @@ class PitcherScore(Base):
     score_id = Column(String(50), primary_key=True)
     
     date = Column(Date(), nullable=False)
-    date_int = Column(Integer(10), nullable=False)
+    date_int = Column(Integer(), nullable=False)
 
     # 경기, 승, 패, 세이브, 홀드
     game_count = Column(Integer())
