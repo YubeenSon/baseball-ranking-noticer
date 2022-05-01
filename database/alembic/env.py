@@ -6,6 +6,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
+import database
 
 load_dotenv(verbose=True)
 
@@ -18,7 +19,7 @@ config = context.config
 if not config.get_main_option("sqlalchemy.url"):
     config.set_main_option(
         "sqlalchemy.url",
-        "postgresql+psycopg2://{username}:{password}@{host}:{port}/{db_name}".format(
+        "mysql+mysqldb://{username}:{password}@{host}:{port}/{db_name}".format(
             username=os.getenv("ALEMBIC_USERNAME"),
             password=os.getenv("ALEMBIC_PASSWORD"),
             host=os.getenv("ALEMBIC_HOST"),
@@ -33,7 +34,7 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+target_metadata = database.Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
