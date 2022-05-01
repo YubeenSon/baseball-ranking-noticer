@@ -19,7 +19,7 @@ class PitcherScore(Base):
 
     # 이닝(자연수부분), 이닝(분수부분), 투구수
     innings_pitched_natural = Column(Integer())
-    innings_pitched_fraction = Column(String())
+    innings_pitched_fraction = Column(String(10))
     number_of_pitches = Column(Integer())
 
     # 피안타, 피홈런
